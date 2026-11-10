@@ -27,21 +27,21 @@
 #include "ofMain.h"
 #include "ofxWinMenu.h" // Menu addon
 
-int start;
-int line_size;
+inline int start;
+inline int line_size;
 
-float X_position, Y_position;                     //현재 움직이는 점의 좌표
-float temp_X_position, temp_Y_position;           //점의 직전 좌표
-float temp2_X_position, temp2_Y_position;         //점의 직직전 좌표
-float temp3_X_position, temp3_Y_position;		  //점의 직직직전 좌표
-float temp4_X_position, temp4_Y_position;         //점의 직직직직전 좌표
+inline float X_position, Y_position;                     //현재 움직이는 점의 좌표
+inline float temp_X_position, temp_Y_position;           //점의 직전 좌표
+inline float temp2_X_position, temp2_Y_position;         //점의 직직전 좌표
+inline float temp3_X_position, temp3_Y_position;		  //점의 직직직전 좌표
+inline float temp4_X_position, temp4_Y_position;         //점의 직직직직전 좌표
 
-bool Goal;
+inline bool Goal;
 
 
 // 차례대로 북 북동 동 남동 남 남서 서 북서의 방향을 나타낸다.
- int d_x[8] = { 0,  1, 1, 1,  0, -1, -1, -1 };
- int d_y[8] = { -1, -1, 0, 1,  1,  1,  0, -1 };
+ inline int d_x[8] = { 0,  1, 1, 1,  0, -1, -1, -1 };
+ inline int d_y[8] = { -1, -1, 0, 1,  1,  1,  0, -1 };
 
 
 
@@ -58,18 +58,18 @@ typedef struct space {
 
 }space;
 
-space boundary_; // 아래 포인터에 넘길 주소를 위한 임시 변수 선언
-space* boundary;
+inline space boundary_; // 아래 포인터에 넘길 주소를 위한 임시 변수 선언
+inline space* boundary;
 
 
 typedef struct graph {
 	space* **maze;
 }graph;
 
-graph g;
+inline graph g;
 
-space** Stack;
-int top;
+inline space** Stack;
+inline int top;
 
 typedef struct node {
 	space* front;
@@ -77,9 +77,9 @@ typedef struct node {
 
 } node;
 
-node Queue_; // 아래 포인터에 넘길 주소를 위한 임시 변수 선언
-node* Queue;
-int q_top;
+inline node Queue_; // 아래 포인터에 넘길 주소를 위한 임시 변수 선언
+inline node* Queue;
+inline int q_top;
 
 
 

@@ -1135,6 +1135,7 @@ bool ofApp::readFile()
 			return false;
 		}
 	}
+	return false;
 }
 void ofApp::freeMemory() {
 
